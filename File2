@@ -1,0 +1,36 @@
+<#
+.SYNOPSIS
+    Sample deployment using PSAppDeployToolkit
+#>
+
+[CmdletBinding()]
+param (
+    [Parameter(Mandatory=$false)]
+    [switch]$DeployMode = 'Install'
+)
+
+# Load Toolkit
+Import-Module "$PSScriptRoot\PSAppDeployToolkit\PSAppDeployToolkit.psm1"
+
+Try {
+    ##*===============================================
+    ## Pre-Installation
+    ##*===============================================
+    Show-InstallationWelcome -CloseApps "notepad" -BlockExecution
+    Show-InstallationProgress -StatusMessage "Installing Notepad++..."
+
+    ##*===============================================
+    ## Installation
+    ##*===============================================
+    $exePath = "$PSScriptRoot\Files\npp.8.6.4.Installer.exe"
+    Execute-Process -Path $exePath -Parameters "/S"  # Silent install switch
+
+    ##*===============================================
+    ## Post-Installation
+    ##*===============================================
+    Show-InstallationPrompt -Message "Notepad++ has been installed successfully." -ButtonRightText "OK"
+
+} Catch {
+    Write-Log -Message "Deployment failed: $($_.Exception.Message)" -Severity 3
+    Exit-Script -ExitCode 1
+}
