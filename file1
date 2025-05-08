@@ -2,3 +2,4 @@ https://wwlx062799-my.sharepoint.com/:u:/g/personal/admin_wwlx062799_onmicrosoft
 https://notepad-plus-plus.org/downloads/
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 Get-ChildItem -Path C:\ -Filter Deploy-Application.ps1 -Recurse
+notepad .\Deploy-Application.ps1
