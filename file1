@@ -4,3 +4,6 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 Get-ChildItem -Path C:\ -Filter Deploy-Application.ps1 -Recurse
 notepad .\Deploy-Application.ps1
 .\Deploy-Application.ps1
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
+Get-ExecutionPolicy -Scope Process
+
