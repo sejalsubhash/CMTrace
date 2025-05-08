@@ -1,36 +1,27 @@
-<#
-.SYNOPSIS
-    Sample deployment using PSAppDeployToolkit
-#>
+## Parameters
+$AppName = "Notepad++"  # Application name
+$MSIPath = "C:\Installers\NotepadPlusPlus.msi"  # Update the MSI path
+$LogFile = "C:\Installers\InstallLog.txt"
 
-[CmdletBinding()]
-param (
-    [Parameter(Mandatory=$false)]
-    [switch]$DeployMode = 'Install'
-)
+## Check if application is already installed
+$InstalledApp = Get-InstalledApplication | Where-Object { $_.DisplayName -like "*$AppName*" }
 
-# Load Toolkit
-Import-Module "$PSScriptRoot\PSAppDeployToolkit\PSAppDeployToolkit.psm1"
-
-Try {
-    ##*===============================================
-    ## Pre-Installation
-    ##*===============================================
-    Show-InstallationWelcome -CloseApps "notepad" -BlockExecution
-    Show-InstallationProgress -StatusMessage "Installing Notepad++..."
-
-    ##*===============================================
-    ## Installation
-    ##*===============================================
-    $exePath = "$PSScriptRoot\Files\npp.8.6.4.Installer.exe"
-    Execute-Process -Path $exePath -Parameters "/S"  # Silent install switch
-
-    ##*===============================================
-    ## Post-Installation
-    ##*===============================================
-    Show-InstallationPrompt -Message "Notepad++ has been installed successfully." -ButtonRightText "OK"
-
-} Catch {
-    Write-Log -Message "Deployment failed: $($_.Exception.Message)" -Severity 3
-    Exit-Script -ExitCode 1
+If ($InstalledApp) {
+    Show-InstallationPrompt -Message "$AppName is already installed." -ButtonRightText "OK"
+    Exit
 }
+
+## Show installation progress
+Show-InstallationProgress -StatusMessage "Installing $AppName... Please wait."
+
+## Log installation start
+Write-Output "$(Get-Date) - Installation of $AppName started..." | Out-File -Append -FilePath $LogFile
+
+## Silent install MSI
+Execute-MSI -Action 'Install' -Path $MSIPath
+
+## Log installation completion
+Write-Output "$(Get-Date) - Installation of $AppName completed successfully!" | Out-File -Append -FilePath $LogFile
+
+## Show installation complete message
+Show-InstallationPrompt -Message "Installation complete!" -ButtonRightText "OK"
