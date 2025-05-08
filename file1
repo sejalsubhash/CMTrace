@@ -7,3 +7,7 @@ notepad .\Deploy-Application.ps1
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
 Get-ExecutionPolicy -Scope Process
 
+Import-Module "$PSScriptRoot\AppDeployToolkit\AppDeployToolkitMain.ps1"
+ 
+Get-WmiObject -Query "SELECT * FROM Win32_Product" | Select-Object Name
+ 
