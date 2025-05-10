@@ -10,4 +10,6 @@ Get-ExecutionPolicy -Scope Process
 Import-Module "$PSScriptRoot\AppDeployToolkit\AppDeployToolkitMain.ps1"
  
 Get-WmiObject -Query "SELECT * FROM Win32_Product" | Select-Object Name
+
+scuser10@WWLx062799.onmicrosoft.com
  
