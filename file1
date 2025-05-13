@@ -15,3 +15,6 @@ scuser10@WWLx062799.onmicrosoft.com
 
 
 New-SelfSignedCertificate -Type CodeSigningCert -Subject "CN=YourCompany" -KeyUsage DigitalSignature -CertStoreLocation "Cert:\CurrentUser\My" 
+
+https://go.microsoft.com/fwlink/p/?LinkID=2195167&clcid=0x409&culture=en-us&country=US
+ 
