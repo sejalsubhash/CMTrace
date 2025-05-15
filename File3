@@ -63,3 +63,7 @@ DISM /Online /Enable-Feature /FeatureName:IIS-ASPNET45 /All
 DISM /Online /Enable-Feature /FeatureName:IIS-NetFxExt45 /All
 
 
+DISM /Online /Enable-Feature /FeatureName:IIS-WebServerRole /All
+DISM /Online /Enable-Feature /FeatureName:IIS-WebServerManagementTools /All
+DISM /Online /Enable-Feature /FeatureName:IIS-ASPNET45 /All
+DISM /Online /Enable-Feature /FeatureName:IIS-NetFxExt45 /All
