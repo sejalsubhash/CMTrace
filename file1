@@ -18,3 +18,4 @@ New-SelfSignedCertificate -Type CodeSigningCert -Subject "CN=YourCompany" -KeyUs
 
 https://go.microsoft.com/fwlink/p/?LinkID=2195167&clcid=0x409&culture=en-us&country=US
  
+https://tinyurl.com/win10entdownload
