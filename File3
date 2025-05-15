@@ -59,4 +59,7 @@ to install the app server you would need MODP
 
 additional : DISM /Online /Get-Features | findstr /i "Asp"
 DISM /Online /Enable-Feature /FeatureName:IIS-ASPNET45 /All
+DISM /Online /Enable-Feature /FeatureName:IIS-ASPNET45 /All
+DISM /Online /Enable-Feature /FeatureName:IIS-NetFxExt45 /All
+
 
