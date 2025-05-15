@@ -56,3 +56,7 @@ Install-WindowsFeature -Name Web-Server, Web-Static-Content, Web-Default-Doc, We
 Now you should be ready to install the App server 
  
 to install the app server you would need MODP
+
+additional : DISM /Online /Get-Features | findstr /i "Asp"
+DISM /Online /Enable-Feature /FeatureName:IIS-ASPNET45 /All
+
