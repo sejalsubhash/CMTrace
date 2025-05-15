@@ -69,4 +69,6 @@ DISM /Online /Enable-Feature /FeatureName:IIS-ASPNET45 /All
 DISM /Online /Enable-Feature /FeatureName:IIS-NetFxExt45 /All
 
 DISM /Online /Get-Features | findstr IIS
+systeminfo | findstr /B /C:"OS Name" /C:"OS Version"
+
 
