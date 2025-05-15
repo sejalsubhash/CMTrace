@@ -1,0 +1,58 @@
+there were two servers requested yesterday 
+ 
+1) AD server
+ 
+2) App Server
+ 
+
+ 
+On 2nd server you need to domain join it 
+ 
+next piece install SQL server
+ 
+- Choose Installation Type → Select New SQL Server Standalone Installation.
+
+ 
+- Select Database Engine Services (Required for App-V).
+
+ 
+Name the instance or you can go with the default
+ 
+- Set Authentication:
+
+ 
+- Choose Mixed Mode (SQL Server & Windows Authentication).
+
+
+
+ 
+Run the below command in powershell  as admin in the same sequence they are provided
+ 
+Install-WindowsFeature -Name Web-Server, Web-Static-Content, Web-Default-Doc, Web-Asp-Net, Web-Net-Ext, Web-ISAPI-Ext, Web-ISAPI-Filter, Web-Windows-Auth, Web-Filtering, Web-Mgmt-Console -IncludeManagementTools
+ 
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe -i
+ 
+if getting error with above then run the bwlow commands in the same sequence
+ 
+DISM /Online /Enable-Feature /FeatureName:IIS-NetFxExtensibility45 /All
+ 
+DISM /Online /Enable-Feature /FeatureName:IIS-ASPNET45
+ 
+iisreset
+ 
+to verify 
+
+Get-WindowsFeature | Where-Object { $_.Name -like "Web-Asp-Net*" }
+ 
+ 
+Install-WindowsFeature -Name Web-Server -IncludeManagementTools
+ 
+Install-WindowsFeature -Name Web-Server, Web-Static-Content, Web-Default-Doc, Web-Asp-Net45, Web-Net-Ext45, Web-ISAPI-Ext, Web-ISAPI-Filter, Web-Windows-Auth, Web-Filtering, Web-Mgmt-Console -IncludeManagementTools
+ 
+DISM /Online /Enable-Feature /FeatureName:IIS-NetFxExtensibility45 /All
+ 
+Install-WindowsFeature -Name Web-Server, Web-Static-Content, Web-Default-Doc, Web-Asp-Net45, Web-Net-Ext45, Web-ISAPI-Ext, Web-ISAPI-Filter, Web-Windows-Auth, Web-Filtering, Web-Mgmt-Console -IncludeManagementTools
+ 
+Now you should be ready to install the App server 
+ 
+to install the app server you would need MODP
