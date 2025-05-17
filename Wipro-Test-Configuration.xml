@@ -1,0 +1,25 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<Configuration ID="ee2f2f66-0805-4bae-a76c-86e620610b5c">
+<Add OfficeClientEdition="64" Channel="MonthlyEnterprise" Version="16.0.18526.20286" MigrateArch="TRUE">
+<Product ID="O365ProPlusRetail">
+<Language ID="en-us"/>
+<Language ID="MatchPreviousMSI"/>
+<ExcludeApp ID="Access"/>
+<ExcludeApp ID="Groove"/>
+<ExcludeApp ID="Lync"/>
+<ExcludeApp ID="OutlookForWindows"/>
+<ExcludeApp ID="Publisher"/>
+</Product>
+</Add>
+<Property Name="SharedComputerLicensing" Value="0"/>
+<Property Name="FORCEAPPSHUTDOWN" Value="FALSE"/>
+<Property Name="DeviceBasedLicensing" Value="0"/>
+<Property Name="SCLCacheOverride" Value="0"/>
+<Property Name="TenantId" Value="cc86c7a3-b8e7-4a6c-9f51-f60a97ccfa61"/>
+<Updates Enabled="FALSE"/>
+<RemoveMSI/>
+<AppSettings>
+<Setup Name="Company" Value="Wipro"/>
+</AppSettings>
+<Display Level="None" AcceptEULA="TRUE"/>
+</Configuration>
