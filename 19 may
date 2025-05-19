@@ -12,3 +12,7 @@ https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install
 
 
 https://learn.microsoft.com/en-us/ssms/release-notes-20
+
+Firewall setting :
+Enable-NetFirewall Rule -DisplayGroup "File and Printer Sharing"
+Enable-NetFirewallRule -DisplayGroup "Windows Management Instrumentation (WMI)"
