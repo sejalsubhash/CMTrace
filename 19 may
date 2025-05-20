@@ -23,4 +23,6 @@ https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-
 
 "C:\Program Files (x86)\VMware\VMware Workstation\vmware-vdiskmanager.exe" -x 50GB "D:\VMs\Ubuntu\Ubuntu.vmdk"
 
+"C:\Program Files (x86)\VMware\VMware Workstation\vmware-vdiskmanager.exe" -x 120GB "C:\Users\Administrator\Documents\Virtual Machines\SSCM-Server\SSCM-Server.vmdk"
+
 
