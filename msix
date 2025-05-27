@@ -1,1 +1,2 @@
 
+New-SelfSigned Certificate -Type CodeSigningCert -Subject "CN=Wipro" -KeyUsage Digital Signature -CertStoreLocation "Cert:\CurrentUser\My"
