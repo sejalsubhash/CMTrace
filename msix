@@ -9,5 +9,7 @@ makeappx pack /d "C:\Path\To\7ZipUnpacked" /p "C:\Path\To\7-Zip.msix"
 
 <rescap:Capability Name="runFullTrust" />
 
+signtool sign /fd SHA256 /f "C:\Certs\MyCompanyCert.pfx" /p YourPassword123 "C:\Path\To\Your.msix"
+
 
 
