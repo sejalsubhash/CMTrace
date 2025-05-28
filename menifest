@@ -1,0 +1,5 @@
+<Capabilities>
+  <Capability Name="internetClient" />
+  <Capability Name="internetClientServer" />
+  <rescap:Capability Name="broadFileSystemAccess" />
+</Capabilities>
