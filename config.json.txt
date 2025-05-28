@@ -1,0 +1,27 @@
+{
+  "applications": [
+    {
+      "id": "SevenZip",
+      "executable": "7zFM.exe",
+      "workingDirectory": ".",
+      "arguments": ""
+    }
+  ],
+  "processes": [
+    {
+      "executable": "7zFM.exe",
+      "fixups": [ "FileRedirectionFixup" ]
+    }
+  ],
+  "fileRedirectionFixup": {
+    "redirectedPaths": {
+      "packageRelativePaths": [
+        {
+          "base": "AppData",
+          "patterns": [ "7-Zip\\*" ],
+          "redirectTo": "LocalAppData"
+        }
+      ]
+    }
+  }
+}
