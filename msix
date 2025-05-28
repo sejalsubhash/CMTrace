@@ -14,5 +14,6 @@ signtool sign /fd SHA256 /f "C:\Certs\MyCompanyCert.pfx" /p YourPassword123 "C:\
 "C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x64\signtool.exe" sign /fd SHA256 /f "C:\Users\admin\Desktop\Fol1\Wipro.pfx" /p Sej@104 "C:\Users\admin\Desktop\MSIX-2\7-Zip.msix"
 
 
+Add-AppxPackage -Path "C:\Users\admin\Desktop\MSIX-2\7-Zip.msix"
 
 
