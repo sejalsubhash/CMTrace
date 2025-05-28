@@ -3,3 +3,5 @@ New-SelfSigned Certificate -Type CodeSigningCert -Subject "CN=Wipro" -KeyUsage D
 
 New-SelfSignedCertificate -Type CodeSigningCert -Subject "CN=Wipro" -CertStoreLocation "Cert:\CurrentUser\My"
 
+makeappx pack /d "C:\Path\To\7ZipUnpacked" /p "C:\Path\To\7-Zip.msix"
+
