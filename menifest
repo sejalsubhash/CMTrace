@@ -3,3 +3,5 @@
   <Capability Name="internetClientServer" />
   <rescap:Capability Name="broadFileSystemAccess" />
 </Capabilities>
+
+https://www.nuget.org/packages/Microsoft.PackageSupportFramework/
